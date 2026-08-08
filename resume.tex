@@ -1,6 +1,6 @@
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.3 in, top=0.3in, right=0.3 in, bottom=0.3in]{geometry} % Document margins
+\usepackage[left=0.15 in, top=0.25in, right=0.15 in, bottom=0.25in]{geometry} % Document margins
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \name{Kevin Berry}
@@ -12,58 +12,61 @@
     \href{https://kpberry.github.io}{kpberry.github.io}
 }  %
 
-\begin{document}
-\begin{rSection}{Education}
-    {\bf Georgia Institute of Technology}, B.S. Computer Science \hfill {Aug 2015 - Dec 2018}\\
-    {\bf Selected Coursework}: Machine Learning, Linguistics, Computer Vision, Compilers, Linear Algebra\\
-    {\bf Extracurriculars}: Communications officer for The Agency (ML/AI club) and Big O (Theoretical CS club)\\
-    {\bf GPA}: 3.96/4.0
-\end{rSection}
+\begin{document}    
+    \begin{rSection}{SKILLS}
+        \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+        Python, Rust, Go, Bash, C, JavaScript, Linux, Kernel, Git, Machine Learning, Statistics, Containers, etc.
+        \end{tabular}
+    \end{rSection}
+    
+    \begin{rSection}{EXPERIENCE}
+        \textbf{Software Engineer - \href{https://cloud.google.com/container-optimized-os/docs}{Container Optimized OS (COS)} Kernel} \hfill Jan 2024 - Present \\
+        \textit{Google} \hfill \textit{Sunnyvale, CA}
+        \begin{itemize}
+            \itemsep -6pt {}
+            \item Led kernel development for an open-source Linux distro used by key Google Cloud products like GKE and Cloud SQL
+            \item Led major kernel upgrades, coordinating with many teams and external companies to add and verify driver support
+            \item Tested drivers and integrated them into the COS kernel (Lustre, iRDMA, TPU, IDPF, and others)
+            \item Made a package manager for kernel modules (\href{https://cos.googlesource.com/cos/tools.git/+/master/src/cmd/cos_dkms/}{cos-dkms}); reduced time to release out-of-tree modules from weeks to days
+            \item Led investigations which resulted in order-of-magnitude speedups for file transfer workloads on COS
+            \item Triaged and solved customer issues relating to many major Linux subsystems like file systems, networking, storage, etc.
+            \item Triaged and patched thousands of kernel and package vulnerabilities
+            \item Led a Linux kernel reading group to increase the skills and knowledge of the whole team
+        \end{itemize}
+        \textbf{Machine Learning Engineer} \hfill Jun 2017 - Dec 2023\\
+        \textit{Worthix - Research Team} \hfill \textit{Alpharetta, GA}
+        \begin{itemize}
+            \itemsep -6pt {}
+            \item Developed LLM-based API for large scale multi-level feedback analysis and summarization
+            \item Developed and trained NLP models and API for real-time survey response topic classification
+        	\item Developed novel algorithms for large-scale unsupervised graph classification
+        	\item Developed queries and statistical analyses for client-facing dashboards
+        	\item Deployed and monitored APIs and applications as scalable microservices in Azure
+        	\item Conducted scientific experiments to improve survey data and model quality
+            \item Developed fast Monte-Carlo Shapley value approximation for calculating response topic importance
+            \item Developed reverse-geolocation API capable of resolving millions of point-in-region queries per second
+            \item Contributed Python code to networkx which massively improved performance for graph unions and intersections
+            \item Contributed Rust code to polars dataframe library which solved infinite loop in core groupby operations
+        \end{itemize}
+     
+        \textbf{Teaching Assistant} \hfill May 2016 - Dec 2017\\
+        \textit{Computer Organization and Programming (CS 2110)} \hfill \textit{Atlanta, GA}
+        \begin{itemize}
+            \itemsep -6pt {} 
+            \item Led recitations on C, Assembly, CPU datapaths, and digital logic
+            \item Wrote software to automate grading of Java programs and circuits 
+        \end{itemize}
+    \end{rSection} 
+    
+    \begin{rSection}{SELECTED PROJECTS}
+        \item \textbf{image-to-ascii (Rust):} {Uses computer vision techniques to convert images and gifs to ASCII art. Capable of converting 120+ images per second. Uses hand-coded SIMD instructions for improved performance. \href{https://github.com/kpberry/image-to-ascii}{(Github)} \href{https://crates.io/crates/image-to-ascii}{(Crates.io)}}
+        \item \textbf{detect-duplicates (Rust):} {Finds all of the duplicated files in a directory. Reads each file at most twice and, in expectation, only has one file loaded at a time. Can check the entire Linux kernel tree in about 5 seconds. \href{https://github.com/kpberry/detect-duplicates}{(Github)} \href{https://crates.io/cates/detect-duplicates}{(Crates.io)}}
+        \item \textbf{Readability Analyzer (JavaScript):} {Assigns average text grade level based on standard readability metrics. Uses MLP with hand-engineered features to count syllables. Can analyze 2,000,000+ characters per second. \href{https://kpberry.github.io/readability.html}{(Web App)}}
+    \end{rSection}
 
-\begin{rSection}{SKILLS}
-    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-        Programming Languages: & Python, Rust, JavaScript, C                                                       \\
-        Tools:                 & PyTorch, pandas, networkx, scikit-learn, Docker, Git, Azure, SQL, MongoDB, \LaTeX \\
-        Human Languages:       & English (fluent), Portuguese (intermediate), Spanish (intermediate)               \\
-    \end{tabular}
-\end{rSection}
-
-\begin{rSection}{EXPERIENCE}
-    \textbf{Machine Learning Engineer} \hfill Jun 2017 - Present\\
-    \textit{Worthix} \hfill \textit{Alpharetta, GA} \\
-    Here, my goal was to help companies understand customer feedback.
-    I have been responsible for designing, developing, deploying, monitoring, and maintaining a wide variety of tools to accomplish this goal.
-    I recruited and currently direct a small team which works on these tasks with me.
-    The following are some highlights of my individual contributions:
-    \begin{itemize}
-        \itemsep -6pt {}
-        \item Developed LLM-based API for large scale multi-level feedback analysis and summarization
-        \item Developed and trained NLP models and API for real-time survey response topic classification
-        \item Developed novel algorithms for large-scale unsupervised graph classification
-        \item Developed queries and statistical analyses for client-facing dashboards
-        \item Deployed and monitored APIs and applications as scalable microservices in Azure
-        \item Conducted scientific experiments to improve survey data and model quality
-        \item Developed fast Monte-Carlo Shapley value approximation for calculating response topic importance
-        \item Developed reverse-geolocation API capable of resolving millions of point-in-region queries per second
-        \item Contributed Python code to networkx which massively improved performance for graph unions and intersections
-        \item Contributed Rust code to polars dataframe library which solved infinite loop in core groupby operations
-    \end{itemize}
-
-    \textbf{Teaching Assistant} \hfill May 2016 - Dec 2017\\
-    \textit{Computer Organization and Programming (CS 2110)} \hfill \textit{Atlanta, GA}
-    \begin{itemize}
-        \itemsep -6pt {}
-        \item Led recitations on C, Assembly, CPU datapaths, and digital logic
-        \item Wrote software to automate grading of Java programs and circuits
-    \end{itemize}
-\end{rSection}
-
-\begin{rSection}{PROJECTS}
-    \item \textbf{image-to-ascii (Rust):} {Uses computer vision techniques to convert images and gifs to ASCII art. Capable of converting 120+ images per second. Uses hand-coded SIMD instructions for improved performance. \href{https://github.com/kpberry/image-to-ascii}{(Github)} \href{https://crates.io/crates/image-to-ascii}{(Crates.io)}}
-    \href{https://github.com/kpberry/minimum-vertex-cover-algorithms}{(Github)}
-    \item \textbf{Rolling a $d_7$ in Finite(ish) Time:} {Paper analyzing the problem of simulating dice with any number of faces given only a standard die set. Proves some efficiency results for interesting cases. \href{https://raw.githubusercontent.com/kpberry/dice/main/dice.pdf}{(Paper)}}
-    \item \textbf{detect-duplicates (Rust):} {Recursively finds all of the duplicated files in a directory. Reads each file at most twice and, in expectation, only has one file loaded at a time. Can check the entire Linux kernel repository (roughly 5GB, over 70,000 files) in about 5 seconds. \href{https://github.com/kpberry/detect-duplicates}{(Github)} \href{https://crates.io/crates/detect-duplicates}{(Crates.io)}}
-    \item \textbf{Readability Analyzer (JavaScript):} {Assigns average text grade level based on standard readability metrics. Uses MLP with hand-engineered features to count syllables. Can analyze 2,000,000+ characters per second. \href{https://kpberry.github.io/readability.html}{(Web App)}}
-    \item \textbf{Vertex Cover Algorithms (Python):} {Implemented algorithms to solve minimum vertex cover problem. Made a new approximation algorithm which achieved state of the art accuracy on 10 out of 11 real-world datasets. \href{https://github.com/kpberry/minimum-vertex-cover-algorithms/blob/master/group_38-kberry35-Report.pdf}{(Paper)}}
-\end{rSection}
+    \begin{rSection}{Education}
+        {\bf Georgia Institute of Technology}, B.S. Computer Science \hfill {Aug 2015 - Dec 2018}\\
+        {\bf Selected Coursework}: Machine Learning, Linguistics, Computer Graphics, Computer Vision, Compilers, Linear Algebra\\
+        {\bf GPA}: 3.96/4.0
+    \end{rSection}
 \end{document}
